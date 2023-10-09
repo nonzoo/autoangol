@@ -100,21 +100,27 @@
   <!--Translation bar-->
   <div class="mt-4">
     {% get_current_language as LANGUAGE_CODE %}
-    <form action="{% url 'set_language' %}" method="post" class="flex items-center bg-transparent space-x-2">
-      {% csrf_token %}
-      <input type="hidden" name="next" value="{{ redirect_to }}" class="hidden">
-      <select name="language" id="language-select" class="border rounded-lg px-2 py-1 bg-white focus:outline-none focus:ring focus:border-blue-300">
-          {% get_available_languages as LANGUAGES %}
-          {% get_language_info_list for LANGUAGES as languages %}
-          {% for language in languages %}
-          <option class="bg-white text-black" value="{{ language.code }}" {% if language.code == LANGUAGE_CODE %} selected {% endif %}>
-            {{ language.name_local }}
-        </option>
-          {% endfor %}
-      </select>
-      <input type="submit" value="Go">
-      </form>
-  </div>
+    <form id="language-form" action="{% url 'set_language' %}" method="post" class="flex items-center bg-transparent space-x-2">
+        {% csrf_token %}
+        <input type="hidden" name="next" value="{{ redirect_to }}" class="hidden">
+        <select name="language" id="language-select" class="border rounded-lg px-2 py-1 bg-white focus:outline-none focus:ring focus:border-blue-300" onchange="submitForm()">
+            {% get_available_languages as LANGUAGES %}
+            {% get_language_info_list for LANGUAGES as languages %}
+            {% for language in languages %}
+            <option class="bg-white text-black" value="{{ language.code }}" {% if language.code == LANGUAGE_CODE %} selected {% endif %}>
+                {{ language.name_local }}
+            </option>
+            {% endfor %}
+        </select>
+    </form>
+
+    <script>
+        function submitForm() {
+            document.getElementById('language-form').submit();
+        }
+    </script>
+</div>
+
 </div>
 
 
