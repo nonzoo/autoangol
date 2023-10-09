@@ -5,5 +5,5 @@ media/uploads/product_images
 media/uploads/profile_pic
 *.pyc
 project/settings.py
-
+db.sqlite3
 node_modules
