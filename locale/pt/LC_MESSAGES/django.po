@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-02 17:25+0100\n"
+"POT-Creation-Date: 2023-10-10 12:25+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,31 +18,52 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: .\core\templates\core\base.html:94
+#: .\core\templates\core\base.html:102
 msgid "Search...Products"
 msgstr "Procurar...produtos"
 
-#: .\core\templates\core\base.html:179
+#: .\core\templates\core\base.html:193
 msgid "About Us"
 msgstr "Sobre nós"
 
-#: .\core\templates\core\base.html:181
+#: .\core\templates\core\base.html:196
 msgid ""
-"IS A BUSINESS TO BUSINESS WEBSITE WHERE REGISTERED AUTOMOTIVE, AGRICULTURE,\n"
-"            BUILDING MATERIALS, ELECTRONICS SOFTWARE TECHNOLOGY AND RETAIL "
-"COMPANIES,\n"
-"            FIRMS & BUSINESSES IN ANGOLA GIVES SATISFACTION TO THEIR "
-"CUSTOMERS"
+"\n"
+"              AutoAngol stands as the premier business-to-business (B2B) "
+"platform in Angola, uniting registered automotive and retail entities in a "
+"dynamic digital ecosystem. This platform transcends traditional industry "
+"boundaries, fostering collaborative relationships among companies, firms, "
+"and businesses. By offering innovative tools and tailored solutions,"
 msgstr ""
-"É um site de negócios B2B onde empresas registradas nos setores automotivo, "
-"agricultura, materiais de construção, eletrônicos, software, tecnologia e "
-"varejo proporcionam satisfação aos seus clientes na Angola."
+"\n"
+" AutoAngol se destaca como o principal business-to-business (B2B) plataforma "
+"em Angola, unindo entidades automóveis e retalhistas registadas numa "
+"ecossistema digital dinâmico. Esta plataforma transcende a indústria "
+"tradicionallimites, promovendo relações colaborativas entre empresas, "
+"firmas, e empresas. Ao oferecer ferramentas inovadoras e soluções "
+"personalizadas,"
 
-#: .\core\templates\core\base.html:187
+#: .\core\templates\core\base.html:197
+msgid ""
+"AutoAngol empowers its members to navigate the intricacies of the automotive "
+"and retail sectors, ensuring operational efficiency, growth, and, above all, "
+"customer satisfaction. With a commitment to redefining the future of "
+"business in Angola, AutoAngol is more than just a transactional space; it's "
+"a thriving community where businesses converge to innovate and collectively "
+"succeed in an ever-evolving market."
+msgstr ""
+"AutoAngol capacita seus membros a navegar pelas complexidades do setor "
+"automotivoe varejo, garantindo eficiência operacional, crescimento e, acima "
+"de tudo, satisfação do cliente. Com o compromisso de redefinir o futuro da "
+"negócios em Angola, a AutoAngol é mais do que um espaço transacional; éuma "
+"comunidade próspera onde as empresas convergem para inovar e "
+"coletivamenteter sucesso em um mercado em constante evolução."
+
+#: .\core\templates\core\base.html:203
 msgid "Mission/Purpose"
 msgstr "Missão/Propósito"
 
-#: .\core\templates\core\base.html:188
+#: .\core\templates\core\base.html:204
 msgid ""
 "Our mission is to facilitate transactions and ensure customer \n"
 "            satisfaction by providing an easy, secure, and transparent "
@@ -56,29 +77,49 @@ msgstr ""
 "simplificar o processo de condução dos negócios, mantendo um alto nível de "
 "confiança e integridade."
 
-#: .\core\templates\core\base.html:194
+#: .\core\templates\core\base.html:210
 msgid "Vision"
 msgstr "Visão"
 
-#: .\core\templates\core\base.html:195
+#: .\core\templates\core\base.html:211
 msgid ""
-"TO BRING YOU REGISTERED COMPANIES THAT DEAL IN RETAIL, AUTOMOTIVE,\n"
-"             AGRICULTURE, REAL ESTATE, BUILDING MATERIALS, ELECTRONICS AND "
-"SOFTWARE TECHNOLOGY\n"
-"             PRODUCTS AND SERVICE WITH A FAST AND A SECURED TRANSACTION AND "
-"SATISFACTION IN\n"
-"             ALIGNMENT WITH THE GROWTH OF TECHNOLOGY"
+"In our unwavering commitment to excellence, AutoAngol is dedicated to "
+"delivering an extensive network of registered companies specializing in "
+"retail and automotive products and services. We prioritize providing a "
+"seamless, fast, and secure transaction experience, perfectly aligned with "
+"the burgeoning landscape of technological advancements."
 msgstr ""
-"Para lhe trazer empresas registradas que atuam no varejo, automotivo, "
-"agricultura, imóveis, materiais de construção, eletrônicos e produtos e "
-"serviços de tecnologia de software,com transações rápidas e seguras, e "
-"satisfação em consonância com o avanço da tecnologia."
+"No nosso compromisso inabalável com a excelência, a AutoAngol dedica-se "
+"aoferecendo uma extensa rede de empresas registradas especializadas "
+"emprodutos e serviços automotivos e de varejo. Priorizamos fornecer um "
+"experiência de transação perfeita, rápida e segura, perfeitamente alinhada "
+"como cenário florescente dos avanços tecnológicos."
 
-#: .\core\templates\core\base.html:204
+#: .\core\templates\core\base.html:212
+msgid ""
+"Our dynamic platform serves as a digital marketplace where businesses "
+"converge, fostering connections and transactions that transcend geographical "
+"boundaries. As a cornerstone of innovation, we leverage cutting-edge "
+"technology to ensure not only the efficiency of transactions but also the "
+"utmost satisfaction of our users. In this era of rapid technological growth, "
+"AutoAngol stands as a beacon, ushering in a new era of business interactions "
+"where convenience, security, and satisfaction converge harmoniously, shaping "
+"the future of commerce in Angola and beyond."
+msgstr ""
+"Nossa plataforma dinâmica serve como um mercado digital onde as "
+"empresasconvergem, promovendo conexões e transações que transcendem a "
+"geografialimites. Como pedra angular da inovação, aproveitamos o que há de "
+"mais modernotecnologia para garantir não só a eficiência das transações, mas "
+"também amáxima satisfação de nossos usuários. Nesta era de rápido "
+"crescimento tecnológicoA AutoAngol é um farol, inaugurando uma nova era de "
+"interações comerciaisonde comodidade, segurança e satisfação convergem "
+"harmoniosamente, moldandoo futuro do comércio em Angola e não só."
+
+#: .\core\templates\core\base.html:220
 msgid "Social links"
 msgstr "Links sociais"
 
-#: .\core\templates\core\base.html:212
+#: .\core\templates\core\base.html:228
 msgid "Contact Us"
 msgstr "Contate-nos"
 
@@ -2251,8 +2292,3 @@ msgstr ""
 #: .\venv\Lib\site-packages\timezone_field\rest_framework.py:12
 msgid "A valid timezone is required."
 msgstr ""
-
-#, fuzzy
-#~| msgid "Repeat password"
-#~ msgid "Repeat pasword"
-#~ msgstr "Repita a senha"

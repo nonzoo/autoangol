@@ -8,13 +8,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Discover amazing deals on our e-commerce store. Shop for a wide range of products including electronics, clothing, and more.">
-  <meta name="keywords" content="e-commerce, online store, best deals, electronics, clothing, autoango">
+  <meta name="keywords" content="e-commerce, online store, best deals, electronics, clothing, autoangol">
+  
   {% block meta %}
 
   {% endblock %}
   <!--<link rel="shortcut icon" type="image" href="/media/uploads/flag_logo.png">-->
 
   <!--My Tailwind css file directory-->
+  
   <link rel="stylesheet" href="/static/build/output.css">
   
   <!--My Bootstrap Css and Js file directory-->
@@ -61,7 +63,13 @@
           margin-right: 4rem;
         }
       }
-
+  /* Initially hide the additional content */
+  #moreContent {
+    display: none;
+  }
+  #moreContent2{
+    display: none;
+  }
   </style>
 
   <style>
@@ -183,11 +191,13 @@
       <ul>
         <li class="mb-4">
           <p class="text-2xl font-sans mb-1">{% trans "About Us" %}</p>
-          <p class="uppercase"><strong>AUTOANGOL</strong> 
-            {% blocktrans %}IS A BUSINESS TO BUSINESS WEBSITE WHERE REGISTERED AUTOMOTIVE, AGRICULTURE,
-            BUILDING MATERIALS, ELECTRONICS SOFTWARE TECHNOLOGY AND RETAIL COMPANIES,
-            FIRMS & BUSINESSES IN ANGOLA GIVES SATISFACTION TO THEIR CUSTOMERS{% endblocktrans %}
-          </p>
+          <p class="uppercase"><strong>AUTOANGOL</strong>
+            
+              {% blocktrans %}
+              AutoAngol stands as the premier business-to-business (B2B) platform in Angola, uniting registered automotive and retail entities in a dynamic digital ecosystem. This platform transcends traditional industry boundaries, fostering collaborative relationships among companies, firms, and businesses. By offering innovative tools and tailored solutions,{% endblocktrans %}<span id="moreContent">{% blocktrans %}AutoAngol empowers its members to navigate the intricacies of the automotive and retail sectors, ensuring operational efficiency, growth, and, above all, customer satisfaction. With a commitment to redefining the future of business in Angola, AutoAngol is more than just a transactional space; it's a thriving community where businesses converge to innovate and collectively succeed in an ever-evolving market.{% endblocktrans %}
+              
+            </span>
+          </p><button onclick="showMore()" class="text-blue-500">Show More</button>
         </li>
         <li class="mb-4">
           <p class="text-2xl font-sans mb-1">{% trans "Mission/Purpose" %}</p>
@@ -198,13 +208,13 @@
         </li>
         <li class="mb-4">
           <p class="text-2xl font-sans mb-1">{% trans "Vision" %}</p>
-          <p class="uppercase">{% blocktrans %}TO BRING YOU REGISTERED COMPANIES THAT DEAL IN RETAIL, AUTOMOTIVE,
-             AGRICULTURE, REAL ESTATE, BUILDING MATERIALS, ELECTRONICS AND SOFTWARE TECHNOLOGY
-             PRODUCTS AND SERVICE WITH A FAST AND A SECURED TRANSACTION AND SATISFACTION IN
-             ALIGNMENT WITH THE GROWTH OF TECHNOLOGY{% endblocktrans %}</p>
+          <p class="uppercase">{% blocktrans %}In our unwavering commitment to excellence, AutoAngol is dedicated to delivering an extensive network of registered companies specializing in retail and automotive products and services. We prioritize providing a seamless, fast, and secure transaction experience, perfectly aligned with the burgeoning landscape of technological advancements.{% endblocktrans %} <span id="moreContent2">
+          {% blocktrans %}Our dynamic platform serves as a digital marketplace where businesses converge, fostering connections and transactions that transcend geographical boundaries. As a cornerstone of innovation, we leverage cutting-edge technology to ensure not only the efficiency of transactions but also the utmost satisfaction of our users. In this era of rapid technological growth, AutoAngol stands as a beacon, ushering in a new era of business interactions where convenience, security, and satisfaction converge harmoniously, shaping the future of commerce in Angola and beyond.{% endblocktrans %}</span></p>
+          <button onclick="showMore2()" class="text-blue-500">Show More</button>
         </li>
       </ul>
     </div>
+    
     <div class="footer-right md:w-1/2 md:text-right">
       <div class="mb-6">
         <h2 class="mb-3 uppercase text-2xl font-serif">{% trans "Social links" %}</h2>
@@ -252,6 +262,27 @@
     document.getElementById("searchInput").value = value;
     document.getElementById("searchSuggestions").innerHTML = "";
   }
+
+  function showMore() {
+      var moreContent = document.getElementById("moreContent");
+
+      // Toggle the visibility of the additional content
+      if (moreContent.style.display === "none" || moreContent.style.display === "") {
+        moreContent.style.display = "inline";
+      } else {
+        moreContent.style.display = "none";
+      }
+    }
+
+    function showMore2(){
+      var moreContent2 = document.getElementById("moreContent2");
+
+      if (moreContent2.style.display ==="none" || moreContent2.style.display === ""){
+        moreContent2.style.display = 'inline';
+      } else {
+        moreContent2.style.display = "none";
+      }
+    }
 </script>
 
 </html>
