@@ -239,7 +239,6 @@ def checkout(request):
         # e.g., log an error or show an error page
         pass
 
-# views.py
 
 def execute_payment(request):
     payment_id = request.GET.get('paymentId')
