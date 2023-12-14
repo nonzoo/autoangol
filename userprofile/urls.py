@@ -7,8 +7,8 @@ from . import views
 urlpatterns = [
     path('privacy/', views.privacy, name='privacy'),
     path('signup/', views.signup, name='signup'),
-    path('login/', auth_views.LoginView.as_view(template_name='userprofile/login.html'), name='login'),
-    path('logout/', auth_views.LogoutView.as_view(), name='logout'),
+    path('login/', views.loginView ,name='login'),
+    path('logout/', views.logoutUser, name='logout'),
 
     path('password_change/', auth_views.PasswordChangeView.as_view(template_name='userprofile/password_change_form.html'), name='password_change'),
     path('password_change_done/', auth_views.PasswordChangeDoneView.as_view(template_name='userprofile/password_change_done.html'), name='password_change_done'),

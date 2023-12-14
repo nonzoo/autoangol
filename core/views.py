@@ -10,6 +10,7 @@ def frontpage(request):
     
     products = Product.objects.filter(user__userprofile__is_vendor=True, status=Product.ACTIVE)
 
+
     # Shuffle the carousel images
     shuffled_products = list(products)
     shuffle(shuffled_products)
@@ -33,4 +34,6 @@ def frontpage(request):
     return render(request, 'core/frontpage.html', {
         'shuffled_products': shuffled_products,
         'products': products,
+        
     })
+

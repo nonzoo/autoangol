@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User 
-from django.contrib.auth import login 
+from django.contrib.auth import login,authenticate,logout
 from .models import Userprofile
 from django.contrib.auth.decorators import login_required
 from django.utils.text import slugify
@@ -21,6 +21,7 @@ from django.contrib.auth.tokens import default_token_generator
 from django.utils.encoding import force_bytes
 from django.core.mail import EmailMultiAlternatives
 from django import template
+from django.contrib.auth import REDIRECT_FIELD_NAME
 #from django.utils import translation
 
 def vendor_detail(request, pk):
@@ -45,11 +46,8 @@ def vendor_detail(request, pk):
 
 
 
-@login_required
+@login_required(login_url='login')
 def my_store(request):
-    '''user_language = 'pt'
-    translation.activate(user_language)
-    request.LANGUAGE_CODE = user_language'''
     
     if request.user.userprofile.is_vendor:
         products = request.user.products.exclude(status=Product.DELETED)
@@ -92,7 +90,7 @@ def create_subscription(request):
     return render(request, 'userprofile/my_store.html')
 
 #to update the is_vendor field in userprofile model when the customer subscribe successfully
-@login_required
+@login_required(login_url='login')
 def update_vendor_status(request):
     user_profile = Userprofile.objects.get(user=request.user)
     user_profile.is_vendor = True
@@ -102,7 +100,7 @@ def update_vendor_status(request):
 
 
 #for vendors to add product
-@login_required
+@login_required(login_url='login')
 def add_product(request):
 
     #saving the product to the database when the submit button is clicked 
@@ -130,7 +128,7 @@ def add_product(request):
     })
 
 #An edit function for the vendors
-@login_required
+@login_required(login_url='login')
 def edit_product(request, pk):
     product = Product.objects.filter(user=request.user).get(pk=pk)
 
@@ -170,7 +168,7 @@ def get_subcategories(request):
 
 
 
-@login_required
+@login_required(login_url='login')
 def delete_product(request, pk):
     product = Product.objects.filter(user=request.user).get(pk=pk)
     product.status = Product.DELETED
@@ -181,11 +179,12 @@ def delete_product(request, pk):
     
 
 
-@login_required
+@login_required(login_url='login')
 def myaccount(request):
     return render (request, 'userprofile/myaccount.html')
 
-@login_required
+
+@login_required(login_url='login')
 def edit_account(request):
     user_profile = request.user.userprofile 
     
@@ -201,6 +200,41 @@ def edit_account(request):
     return render(request, 'userprofile/edit_account.html', {'form': form})
 
 
+def loginView(request):
+    if request.user.is_authenticated:
+        return redirect('frontpage')
+
+    if request.method == 'POST': #if the user enter thier information and login
+        username = request.POST.get('username') #get the username
+        password = request.POST.get('password') # get the password
+
+        #check if the user exits
+        try:
+            user = User.objects.get(username = username)
+
+        except:
+            messages.error(request, 'User does not exit')
+
+        #authenticate the user 
+        user = authenticate(request, username=username, password= password)
+
+        if user is not None:
+            login(request, user) #log the user in
+
+            return redirect('myaccount')# redirects the user back to the home page
+        
+        else:
+          messages.error(request, "Username OR Password does not exit")
+
+    context = {}
+    return render (request, 'userprofile/login.html', context)
+
+
+
+def logoutUser(request):
+
+    logout(request)
+    return redirect('frontpage')
 
 def signup(request):
     if request.method == 'POST':
@@ -208,6 +242,7 @@ def signup(request):
 
         if form.is_valid():
             user = form.save()
+            user.username = user.username.lower()
             login(request, user)
             userprofile = Userprofile.objects.create(user=user)
             return redirect('myaccount')

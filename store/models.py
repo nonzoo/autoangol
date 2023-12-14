@@ -37,14 +37,10 @@ class Subcategory(models.Model):
 
 
 class Product(models.Model):
-    DRAFT = 'draft'
-    WAITING_APPROVAL = 'waiting_approval'
     ACTIVE = 'active'
     DELETED = 'deleted'
 
     STATUS_CHOICES = (
-        (DRAFT, 'Draft'),
-        (WAITING_APPROVAL, 'Waiting Approval'),
         (ACTIVE, 'Active'),
         (DELETED, 'Deleted'),
     )

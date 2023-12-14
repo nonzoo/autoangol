@@ -25,7 +25,6 @@
                     <p class="mt-2"><a href="mailto:{{ user.userprofile.company_email }}" class="no-underline">{{ user.email }}</a></p>
                     <h2 class="text-lg font-semibold">WhatsApp</h2>
                     <p class="mt-2"><a href="https://wa.me/{{ user.userprofile.company_whatsapp_number }}" class="no-underline">{{ user.userprofile.company_whatsapp_number }}</a></p>
-
                     {% if user.userprofile.website %}
                         <h2 class="text-lg font-semibold">{% trans "Company Website" %}</h2>
                         <a href="https://{{ user.userprofile.website }}" class="text-blue-500 hover:underline">{{ user.userprofile.website }}</a>

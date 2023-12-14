@@ -17,6 +17,7 @@ class State(models.Model):
     def __str__(self): 
         return self.state
      
+     
 class Userprofile(models.Model):
     company_image = models.ImageField(null=True, blank=True, upload_to='uploads/profile_pic')
     user = models.OneToOneField(User, related_name='userprofile', on_delete=models.CASCADE)

@@ -13,6 +13,9 @@ class Subcategory(admin.ModelAdmin):
 class ProductAdmin(admin.ModelAdmin):
     list_display = ['title','user','price', 'category','condition','created_at']
     search_fields = ['user__username', 'title', 'condition']
+    list_per_page = 50 
+    list_filter = ['status']
+
 
 
 
